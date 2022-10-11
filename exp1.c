@@ -1,6 +1,14 @@
 #include <stdio.h>
+#pragma pack(1)
+
+typedef struct
+{
+    int roll_name;
+    char name[30];
+} student;
 
 int main()
 {
-    char c[10] = "srujan";
+    student s1;
+    printf("%d", sizeof(student));
 }
