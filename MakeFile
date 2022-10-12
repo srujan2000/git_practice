@@ -1,0 +1,10 @@
+CC= gcc
+CFLAGS= -g -o
+
+all: add_numbers run
+
+add_numbers:add_numbers.c
+	$(CC) $(CFLAGS) $@ $^
+
+run:
+	./add_numbers
