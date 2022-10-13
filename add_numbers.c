@@ -12,21 +12,30 @@ void addition(unsigned char a[], unsigned char b[])
         size++;
     }
 
-    for (unsigned char i = size - 1; i >= 0; i--)
+    for (int i = size - 1; i >= 0; i--)
     {
         char add = (a[i] - 48) + (b[i] - 48);
         if (add > 9)
         {
             num3[(size - i) - 1] = (add % 10) + 48;
-            num3[size - i] = (add / 10) + 48;
+            num3[size - i] = (add / 10);
         }
         else
         {
-            num3[(size - i) - 1] = (num3[(size - i) - 1] + add) + 48;
+            char carry = (num3[(size - i) - 1] + add);
+            if (carry > 9)
+            {
+                num3[(size - i) - 1] = (carry % 10) + 48;
+                num3[size - i] = (carry / 10) + 48;
+            }
+            else
+            {
+                num3[(size - i) - 1] = carry + 48;
+            }
         }
     }
 
-    if (num3[size + 1] != 0)
+    if (num3[size] != 0)
     {
         size++;
     }
