@@ -14,7 +14,7 @@ void addition(unsigned char a[], unsigned char b[])
 
     for (int i = size - 1; i >= 0; i--)
     {
-        char add = (a[i] - 48) + (b[i] - 48);
+        char add = (num3[(size - i) - 1]) + (a[i] - 48) + (b[i] - 48);
         if (add > 9)
         {
             num3[(size - i) - 1] = (add % 10) + 48;
@@ -22,16 +22,7 @@ void addition(unsigned char a[], unsigned char b[])
         }
         else
         {
-            char carry = (num3[(size - i) - 1] + add);
-            if (carry > 9)
-            {
-                num3[(size - i) - 1] = (carry % 10) + 48;
-                num3[size - i] = (carry / 10) + 48;
-            }
-            else
-            {
-                num3[(size - i) - 1] = carry + 48;
-            }
+            num3[(size - i) - 1] = add + 48;
         }
     }
 
