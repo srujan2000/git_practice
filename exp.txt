@@ -1,2 +1,3 @@
 this is created just to practice git.
 practice merge conflict
+this is created just to practice git and also solve merge conflicts.
