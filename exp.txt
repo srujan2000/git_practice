@@ -1,1 +1,2 @@
 this is created just to practice git.
+practice merge conflict
